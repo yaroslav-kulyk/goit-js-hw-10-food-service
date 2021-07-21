@@ -9,11 +9,15 @@ const THEME_KEY = 'theme';
 export function setTheme() {
   if (!getTheme()) {
     setLightTheme();
+    return;
   }
 
   if (getTheme() === Theme.DARK) {
     setDarkTheme();
+    return;
   }
+
+  setLightTheme();
 }
 
 function getTheme() {
